@@ -1,0 +1,16 @@
+.headers{
+  background-color: cadetblue;
+  width: 100%;
+  height: 70px;
+  display: flex;
+}
+.headers img{
+  width: 110px;
+}
+.headers p {
+  font-size: 18px ;
+  color: #ffffff;
+  margin-top: 10px;
+  font-weight: 700;
+  text-transform: uppercase;
+}

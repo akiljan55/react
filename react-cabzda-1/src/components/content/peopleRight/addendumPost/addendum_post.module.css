@@ -1,0 +1,12 @@
+
+.create{
+    display: flex;
+    margin: 0;
+}
+.create button{
+    color: white;
+    font-size: 14px;
+    font-weight: 500;
+    background: rgba(14, 7, 7, 0.95);
+    cursor: pointer;
+}

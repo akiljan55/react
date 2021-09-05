@@ -1,0 +1,9 @@
+.div{
+    background-color: darkblue;
+    height: 500px;
+    margin-top: -30px;
+}
+.div p{
+    font-size: 32px;
+    color: darkgray;
+}

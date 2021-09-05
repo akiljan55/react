@@ -1,0 +1,17 @@
+body{
+    margin: 0;
+    padding: 0;
+    background: rgb(214, 214, 214);
+}
+.display{
+    display: flex;
+    margin-top: 10px;
+    min-height: 500px;
+    position: relative;
+}
+.display-content{
+    width: 78%;
+    min-height: 500px;
+    position: absolute;
+    right: 0;
+}

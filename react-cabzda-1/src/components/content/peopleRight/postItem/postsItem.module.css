@@ -1,0 +1,10 @@
+.post{
+    color: #ffffff;
+    padding: 5px;
+    line-height: 24px;
+    display: flex;
+}
+.post img{
+    width: 60px;
+    height: 60px;
+}

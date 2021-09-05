@@ -1,0 +1,9 @@
+.divs{
+    background-color: forestgreen;
+    height: 500px;
+    margin-top: -30px;
+}
+.divs p{
+    font-size: 32px;
+    color: darkgray;
+}
