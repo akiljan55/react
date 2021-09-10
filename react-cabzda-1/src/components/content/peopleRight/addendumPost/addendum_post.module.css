@@ -3,10 +3,17 @@
     display: flex;
     margin: 0;
 }
+.create textarea{
+    border: 0;
+    outline: none;
+    margin-left: 5px;
+}
 .create button{
     color: white;
     font-size: 14px;
     font-weight: 500;
     background: rgba(14, 7, 7, 0.95);
     cursor: pointer;
+    padding: 0 10px;
+    outline: none;
 }

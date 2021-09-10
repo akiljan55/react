@@ -1,5 +1,4 @@
-import logo from './logo.svg';
-import './App.css';
+import s from  './App.module.css';
 import People from './components/people/People';
 import Headers from './components/header/Headers';
 import PeopleRight from './components/content/peopleRight/peopleRight';
@@ -10,18 +9,20 @@ import DialogsCont from './components/content/dialogs/dialogsCont';
 import RegisterCont from './components/content/register/registerCont';
 
 const App = (props) => {
+
   return (
     <BrowserRouter>
-      <div>
+      <div className={s.container}>
         <Headers />
-        <div className="display">
+        <div className={s.display}>
           <People />
-          <div className="display-content">
-                <Route path='/profile' render={ ()  => <PeopleRight postData={props.state.postData} />} />
+          <div className={s.display_content}>
+                <Route path='/profile' render={ ()  => <PeopleRight postData={props.state.peopleRightMessage.postData}
+                                                                    store={props.store} />} />
+
                 <Route path='/content' render={ ()  => <ContentRight />} />
                 <Route path='/info' render={ ()  => <InfoCont />} />
-                <Route path='/dialogs' render={ ()  => <DialogsCont
-                  dialogsData={props.state.dialogsData} messageData={props.state.messageData}/>} />
+                <Route path='/dialogs' render={ ()  => <DialogsCont dialogsData={props.state.dialogsMessage.dialogsData}/>} />
                 <Route path='/register' render={ ()  => <RegisterCont />} />
           </div>
         </div>

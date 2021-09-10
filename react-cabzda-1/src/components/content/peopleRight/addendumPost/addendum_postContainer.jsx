@@ -1,26 +1,21 @@
-import s from './addendum_post.module.css';
+
 import React from "react";
 import {AddNewChanges, AddPost} from "../../../../redux/peopleRightMessage-reducer";
+import Addendum_post from './addendum_post'
 
-const Addendum_post = (props) => {
-debugger
-    let addendum_text = React.createRef();
+const Addendum_postContainer = (props) => {
+
+    let store = props.store.getState().peopleRightMessage
 
     let alertAddendum = () => {
-        props.dispatch(AddPost())
+        props.store.dispatch(AddPost())
+    }
+    let addPostChange = (conText) => {
+        props.store.dispatch(AddNewChanges(conText))
     }
 
-    let addPostChange = () => {
-        let conText = addendum_text.current.value
-        props.dispatch(AddNewChanges(conText))
-    }
-
-    return (
-        <div className={s.create}>
-            <textarea ref={addendum_text} onChange={addPostChange} value={props.nowPost} />
-            <button onClick={alertAddendum}>CLICK</button>
-        </div>
-    )
+    return <Addendum_post addPost={alertAddendum} updateAddPostChange={addPostChange}
+                           nowPost={store.nowPost}/>
 }
 
-export default Addendum_post;
+export default Addendum_postContainer;

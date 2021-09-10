@@ -1,34 +1,29 @@
 import React from "react";
-import s from "./dialogsInfo.module.css";
 import {AddDialogs, AddDialogsChanges} from "../../../../redux/dialogsMessage-reducer";
+import Censuses from "./dialogsInfo";
+import {connect} from "react-redux";
 
-const Message = (props) => {
 
-    return <div>{props.messange}</div>
+let mapStateToProps = (state) => {
+    return{
+        nowDialogs: state.nowDialogs,
+        messageData: state.messageData
+    }
 }
 
-
-const Censuses = (props) => {
-   debugger
-let messageElement = props.messageData.map( m => <Message messange= {m.message} />)
-
-let newAddText = React.createRef();
-
-let alertPost = () =>{
-    props.dispatch(AddDialogs())
-}
-let alertChange = () => {
-    let text = newAddText.current.value
-    props.dispatch(AddDialogsChanges(text))
+let mapDispatchToProps = (dispatch) => {
+    return {
+        upDateAddDialogs: () => {
+            dispatch(AddDialogs())
+        },
+        upDateAddDialogsChanges: (text) => {
+            dispatch(AddDialogsChanges(text))
+        }
+    }
 }
 
-    return(
-        <div className={s.dialog}>
-            {messageElement}
-            <textarea ref={newAddText} onChange={alertChange} value={props.nowDialogs} /><br />
-            <button onClick={alertPost} >Send</button>
-        </div>
-    )
-}
+const CensusesContainer = connect(mapStateToProps, mapDispatchToProps) (Censuses)
 
-export default Censuses;
+
+
+export default CensusesContainer;

@@ -1,15 +1,16 @@
 
 import s from './dialogsCont.module.css';
-import Censuses from './dialogsInfo/dialogsInfo';
 import DialogMenu from './dialogeMenu/dialogsMenu';
+import CensusesContainer from "./dialogsInfo/dialogsInfoContainer";
 
 const DialogsCont = (props) => {
+
     return (
         <div className={s.dialogs}>
-            <DialogMenu dialogsData={props.dialogsData} />
-            <Censuses messageData={props.messageData} />
-        </div>
-    )
+        <DialogMenu dialogsData={props.dialogsData} />
+    <CensusesContainer/>
+</div>
+)
 }
 
 export default DialogsCont;

@@ -7,12 +7,12 @@ debugger
     let addendum_text = React.createRef();
 
     let alertAddendum = () => {
-        props.dispatch(AddPost())
+        props.addPost()
     }
 
     let addPostChange = () => {
         let conText = addendum_text.current.value
-        props.dispatch(AddNewChanges(conText))
+        props.updateAddPostChange(conText)
     }
 
     return (

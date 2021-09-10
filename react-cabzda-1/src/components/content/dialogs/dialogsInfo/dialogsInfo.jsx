@@ -8,21 +8,24 @@ const Message = (props) => {
 
 
 const Censuses = (props) => {
-
+   debugger
 let messageElement = props.messageData.map( m => <Message messange= {m.message} />)
 
-let newText = React.createRef();
+let newAddText = React.createRef();
 
 let alertPost = () =>{
-    let text = newText.current.value
-    alert(text)
+    props.upDateAddDialogs()
+}
+let alertChange = () => {
+    let text = newAddText.current.value
+    props.upDateAddDialogsChanges(text)
 }
 
     return(
         <div className={s.dialog}>
             {messageElement}
-            <textarea ref={newText}></textarea><br />
-            <button onClick={alertPost} >Play</button>
+            <textarea ref={newAddText} onChange={alertChange} value={props.nowDialogs} /><br />
+            <button onClick={alertPost} >Send</button>
         </div>
     )
 }
